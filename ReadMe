@@ -1,0 +1,11 @@
+#1 use make to compile the program
+#2 use ./strfind to run it
+#3 when you run it, please note that you should add three params,
+	an example ./strfind strpool.dat checkedmail.dat result.dat
+	the strpool.dat is the file which we will use to build the trie
+	the checkedmail.dat is the file which we should check
+	the result.dat is the file which we will write the result
+	FYI，for reducing the pack of this program, I remove the test data from this pack, so you should copy the test file into this memo.
+   and the program will init the input and build the trie and match the strings
+   if you have any questions, please contact me. ->boblee0717@gmail.com
+
