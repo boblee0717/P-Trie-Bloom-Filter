@@ -317,7 +317,6 @@ void trie_check(FILE* fp1,FILE *fp2,FILE *fp3) {
     while(fgets(line,1024,fp1)) {
         s = change(line);
         add(s,Trie->left,-1,Trie);
-        free(s);
         if(cnt2%1000000==0) {
             printf("has add %d\n",cnt2);
         }
