@@ -309,28 +309,30 @@ void trie_check(FILE* fp1,FILE *fp2,FILE *fp3) {
     int cnt = 0;
     int cnt2 = 1;
     FILE* fpt = fp1;
+
     printf("Now we will init the huffman code........\n");
     init_huffman(fpt);
     printf("Now init the huffman code done........\n");
     printf("Now we will add the data from input file to build a trie .......\n");
     fseek(fp1, 0, SEEK_SET);
+
     while(fgets(line,1024,fp1)) {
         s = change(line);
         add(s,Trie->left,-1,Trie);
         if(cnt2%1000000==0) {
             printf("has add %d\n",cnt2);
         }
+		free(s);
         cnt2++;
     }
     printf("Now the building has done and we will match strings........\n");
 	fprintf(fp3,"-------------------------------------Trie Match-------------------------------------------\n");
     while(fgets(line,1024,fp2)) {
-        s = change(line);
+        s=change(line);
         if(!lookup(s,Trie->left)) {
             fprintf(fp3,"%d no\n",cnt);
         }
-        free(s);
         cnt++;
+        free(s);
     }
-
 }

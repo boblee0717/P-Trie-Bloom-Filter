@@ -21,7 +21,7 @@ int huff_c[70];
 huffman_node huffman[2000];
 char lib[70][100];
 
-char *change(char *s) ;
+char * change(char *s) ;
 node *createNode();
 void add(char *s,node *root,int l_or_r,node *parent);
 int lookup(char *s2,node *root);
